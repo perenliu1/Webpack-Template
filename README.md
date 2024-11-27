@@ -5,7 +5,7 @@
 ## 项目结构
 
 ```
-webpack_code1/
+webpack_template/
 ├── config/
 │   ├── webpack.dev.js         # 开发环境配置
 │   └── webpack.prod.js        # 生产环境配置
