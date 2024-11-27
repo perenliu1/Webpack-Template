@@ -1,0 +1,38 @@
+@base-color: #ffcccc; // 基础颜色（浅粉色）
+@darken-step: 5%; // 每个盒子颜色加深的步长
+
+// 混合函数，用于生成不同深度的颜色和内容
+.generate-boxes(@n, @i: 1) when (@i =< @n) {
+    .box:nth-child(@{i}) {
+        background-color: darken(@base-color, @darken-step * (@i - 1));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        
+        // 使用伪元素显示数字
+        &::after {
+            content: "@{i}";
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+        }
+    }
+    .generate-boxes(@n, (@i + 1));
+}
+
+// 调用混合函数，假设生成 20 个 .box
+.generate-boxes(5);
+
+.box {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+
+.box1 {
+    &:extend(.box);
+    background: url("../img/头像.jpg");
+    background-size: contain;
+}

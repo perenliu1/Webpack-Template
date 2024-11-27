@@ -1,0 +1,99 @@
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Flexbox */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-item {
+    background-color: lightcoral;
+    padding: 20px;
+    text-align: center;
+}
+
+/* CSS Variables */
+:root {
+    --main-color: lightgreen;
+}
+
+.variable-test {
+    background-color: var(--main-color);
+    padding: 20px;
+    text-align: center;
+}
+
+/* CSS Custom Properties with Fallback */
+.custom-prop-fallback {
+    background-color: var(--non-existing-color, lightyellow);
+    padding: 20px;
+    text-align: center;
+}
+
+/* CSS Feature Queries */
+@supports (display: grid) {
+    .supports-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@supports not (display: grid) {
+    .no-grid {
+        display: block;
+    }
+}
+
+/* CSS Shapes */
+.shape {
+    shape-outside: circle(50%);
+    float: left;
+    width: 200px;
+    height: 200px;
+    background-color: lightcoral;
+    margin: 20px;
+}
+
+/* CSS Clip Path */
+.clip-path {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    margin: 20px;
+}
+
+/* CSS Grid Auto Placement */
+.auto-grid {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-auto-rows: 100px;
+}
+
+.auto-grid-item {
+    background-color: lightgreen;
+    margin: 5px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* CSS Media Queries */
+@media (max-width: 600px) {
+    .responsive {
+        background-color: lightpink;
+        padding: 20px;
+        text-align: center;
+    }
+}
